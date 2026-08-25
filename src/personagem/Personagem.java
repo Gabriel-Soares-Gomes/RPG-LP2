@@ -1,9 +1,9 @@
 package personagem;
 
-import recompensa.Recompensa;
-import missao.Missao;
-import missao.EstadoMissao;
 import inventario.Inventario;
+import missao.EstadoMissao;
+import missao.Missao;
+import recompensa.Recompensa;
 
 public class Personagem {
 
@@ -36,6 +36,7 @@ public class Personagem {
     public void setMissaoAtual(Missao missaoAtual) {
         this.missaoAtual = missaoAtual;
         missaoAtual.setSituacaoAtual(EstadoMissao.EM_ANDAMENTO);
+        System.out.println("Missão: " + missaoAtual.getTitulo());
     }
 
     public Inventario getInventario() {
@@ -55,13 +56,6 @@ public class Personagem {
         this.inventario = new Inventario();
     }
 
-    @Deprecated
-    public void reinvidicar(Recompensa recompensa) {
-        this.energia += recompensa.getEnergia();
-        this.ouro += recompensa.getOuro();
-        System.out.println("energia após missão: " + this.energia + " ouro após missão: " + this.ouro);
-    }
-
     public void concluirMissaoAtual() {
         Recompensa recompensa = missaoAtual.concluir();
         this.energia += recompensa.getEnergia();
@@ -69,11 +63,21 @@ public class Personagem {
         if (recompensa.getItemRecompensa() != null) {
             inventario.adicionar(recompensa.getItemRecompensa());
         }
-        System.out.println("energia após missão: " + this.energia + " ouro após missão: " + this.ouro);
+        System.out.println("energia após missão: " + this.energia + "\n" + "ouro após missão: " + this.ouro);
+        System.out.println("Itens no inventário depois da missao:");
+        this.printItens();
+        System.out.println("\n");
     }
 
     public void printItens() {
         inventario.printItens();
+    }
+
+    public void antesDaMissao() {
+        System.out.println("Itens, energia e ouro no inventário antes da missao:");
+        this.printItens();
+        System.out.println("Energia: " + this.getEnergia());
+        System.out.println("Ouro: " + this.getOuro() + "\n");
     }
 
 };

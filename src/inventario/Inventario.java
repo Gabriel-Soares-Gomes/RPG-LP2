@@ -1,7 +1,6 @@
 package inventario;
 
 import item.Item;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class Inventario {
             return;
         }
         for (Item item : itens) {
-            System.out.println(item.nome());
+            System.out.println(item.nome() + " -- " + item.raridade() + " -- " + item.tipo());
         }
     }
 
