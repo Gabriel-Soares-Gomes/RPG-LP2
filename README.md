@@ -1,5 +1,15 @@
 # Documentação do Jogo LP2
 
+## 👥 Equipe
+ - Anthony Gabriel Gomes Rocha 
+      - aggr5555@gmail.com
+ - Gabriel Soares Gomes
+      - gabrielsoaresgomes14@gmail.com
+ - Heitor Gomes de Sena Melo Mariz
+      - marizheitor@gmail.com
+ - Mauro Cesar Guerra Pacheco
+      - maurinpacheco@gmail.com
+
 ## 🛠️ Como Compilar e Executar
 
 Para compilar e rodar o projeto via terminal, utilize os seguintes comandos na raiz da pasta `src`:
@@ -13,6 +23,7 @@ java Main
 ## Implementações
 
 Este projeto implementa a estrutura básica de um sistema de RPG, focando na gestão de personagens, missões e inventário.
+
 
 ### 📦 Gestão de Itens (`item/`)
 - **Item**: Classe base para representar objetos do jogo.
